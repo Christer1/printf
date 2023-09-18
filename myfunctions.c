@@ -2,61 +2,56 @@
 
 int _printf(const char *format, ...)
 {
-    int myChar = 0;
-    va_list args;
-
-    if (format == NULL)
-    {
-        return (-1);
-    }
-
-    va_start(args, format);
-
-    while (*format)
-    {
-        if (*format != '%')
+        int myChar = 0;
+        va_list args;
+        if (format == NULL)
         {
-            write(1, format, 1);
-            myChar++;
+                return (-1);
         }
-        else
+
+        va_start(args, format);
+
+        while (*format)
         {
-            format++;
-            if (*format == '\0')
-            {
-                break;
-            }
-            else if (*format == '%')
-            {
-                write(1, format, 1);
-                myChar++;
-            }
-            else if (*format == 'c')
-            {
-                char c = va_arg(args, int);
-                write(1, &c, 1);
-                myChar++;
-            }
-            else if (*format == 's')
-            {
-                char *str = va_arg(args, char*);
-                int str_len = 0;
-                while (str[str_len] != '\0')
+                if (*format != '%')
                 {
-                    str_len++;
+                        write(1, format, 1);
+                        myChar++;
                 }
-                write(1, str, str_len);
-                myChar += str_len;
-            }
+                else
+                {
+                        format++;
+                        if (*format == '\0')
+                        {
+                                break;
+                        }
+                        else if (*format == '%')
+                        {
+                                write(1, format, 1);
+                                myChar++;
+                        }
+                        else if (*format == 'c')
+                        {
+                                char c = va_arg(args, int);
+                                write(1, &c, 1);
+                                myChar++;
+                        }
+                        else if (*format == 's')
+                        {
+                                char *str = va_arg(args, char*);
+                                int str_len = 0;
+                                while (str[str_len] != '\0')
+                                {
+                                        str_len++;
+                                }
+                                write(1, str, str_len);
+                                myChar += str_len;
+                        }
+                }
+                format++;
         }
-
-        format++;
-    }
-    va_end(args);
-
-
-    return myChar;
-
+        va_end(args);
+        return (myChar);
 }
 
 /* Main function to test all the characters to check for task 0 (c,s,%) */
