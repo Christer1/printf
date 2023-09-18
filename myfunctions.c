@@ -54,6 +54,17 @@ int _printf(const char *format, ...)
     }
     va_end(args);
 
+
     return myChar;
 
 }
+
+/* Main function to test all the characters to check for task 0 (c,s,%) */
+
+    // int main()
+    // {
+    //     _printf("Leo\n");
+    //     _printf("%c\n", 'V');
+    //     _printf("%s\n", "String");
+    //     _printf("%%\n");
+    // }
