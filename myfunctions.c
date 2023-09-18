@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
             {
                 break;
             }
-            else if (format == '%')
+            else if (*format == '%')
             {
                 write(1, format, 1);
                 myChar++;
