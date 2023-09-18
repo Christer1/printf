@@ -1,11 +1,5 @@
 #include "main.h"
 
-
-/**
- * *variadic function that returns printf
- * Return: Return printf
- */
-
 int _printf(const char *format, ...)
 {
     int myChar = 0;
