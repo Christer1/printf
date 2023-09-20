@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 	}
 
 	_buffer(buffer, &buffCount);
-	va_end(list);
+	va_end(arg);
 
 	return (output_chars);
 }
