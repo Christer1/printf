@@ -1,1 +1,1 @@
-ALX Team Project for Printf between Dr Successs and Olawale Yussuph readme
+ALX Team Project for Printf readme
